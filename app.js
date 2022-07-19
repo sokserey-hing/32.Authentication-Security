@@ -19,8 +19,6 @@ app.use(
 );
 
 
-
-
 //establish the connection
 mongoose.connect("mongodb://localhost:27017/userDB");
 
@@ -30,7 +28,7 @@ const userSchema = new mongoose.Schema({
   password: String,
 });
 
-const secret = process.env.SECRET; 
+const secret = process.env.SECRET; // the SECRET is from .env file and that .env file is also included in .gitignore file
 
 userSchema.plugin(encrypt, {
   secret: secret,
